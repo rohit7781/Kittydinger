@@ -233,12 +233,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              <div style={{"font-size":"35px"}}>
-                Under Maintenance
-                <br/>
-              Minting will start soon
-              </div>
-              {/* {data.totalSupply} / {CONFIG.MAX_SUPPLY} */}
+              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextDescription
               style={{
@@ -247,7 +242,7 @@ function App() {
               }}
             >
               <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {/* {truncate(CONFIG.CONTRACT_ADDRESS, 15)} */}
+                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
               </StyledLink>
             </s.TextDescription>
             <span
@@ -265,7 +260,7 @@ function App() {
               >
                 Roadmap
               </StyledButton> */}
-              {/* <StyledButton
+              <StyledButton
                 style={{
                   margin: "5px",
                 }}
@@ -274,7 +269,7 @@ function App() {
                 }}
               >
                 {CONFIG.MARKETPLACE}
-              </StyledButton> */}
+              </StyledButton>
             </span>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -299,52 +294,51 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  {/* 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}. */}
+                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                  {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  {/* Excluding gas fees. */}
+                  Excluding gas fees.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
-                  // <s.Container ai={"center"} jc={"center"}>
-                  //   <s.TextDescription
-                  //     style={{
-                  //       textAlign: "center",
-                  //       color: "var(--accent-text)",
-                  //     }}
-                  //   >
-                  //     Connect to the {CONFIG.NETWORK.NAME} network
-                  //   </s.TextDescription>
-                  //   <s.SpacerSmall />
-                  //   <StyledButton
-                  //     onClick={(e) => {
-                  //       e.preventDefault();
-                  //       dispatch(connect());
-                  //       getData();
-                  //     }}
-                  //   >
-                  //     CONNECT
-                  //   </StyledButton>
-                  //   {blockchain.errorMsg !== "" ? (
-                  //     <>
-                  //       <s.SpacerSmall />
-                  //       <s.TextDescription
-                  //         style={{
-                  //           textAlign: "center",
-                  //           color: "var(--accent-text)",
-                  //         }}
-                  //       >
-                  //         {blockchain.errorMsg}
-                  //       </s.TextDescription>
-                  //     </>
-                  //   ) : null}
-                  // </s.Container>
-                  <></>
+                  <s.Container ai={"center"} jc={"center"}>
+                    <s.TextDescription
+                      style={{
+                        textAlign: "center",
+                        color: "var(--accent-text)",
+                      }}
+                    >
+                      Connect to the {CONFIG.NETWORK.NAME} network
+                    </s.TextDescription>
+                    <s.SpacerSmall />
+                    <StyledButton
+                      onClick={(e) => {
+                        e.preventDefault();
+                        dispatch(connect());
+                        getData();
+                      }}
+                    >
+                      CONNECT
+                    </StyledButton>
+                    {blockchain.errorMsg !== "" ? (
+                      <>
+                        <s.SpacerSmall />
+                        <s.TextDescription
+                          style={{
+                            textAlign: "center",
+                            color: "var(--accent-text)",
+                          }}
+                        >
+                          {blockchain.errorMsg}
+                        </s.TextDescription>
+                      </>
+                    ) : null}
+                  </s.Container>
                 ) : (
                   <>
                     <s.TextDescription
@@ -389,7 +383,7 @@ function App() {
                     </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      {/* <StyledButton
+                      <StyledButton
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
@@ -398,7 +392,7 @@ function App() {
                         }}
                       >
                         {claimingNft ? "BUSY" : "BUY"}
-                      </StyledButton> */}
+                      </StyledButton>
                     </s.Container>
                   </>
                 )}
@@ -423,7 +417,6 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-
             Please make sure you are connected to the right network (
             {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
             Once you make the purchase, you cannot undo this action.
